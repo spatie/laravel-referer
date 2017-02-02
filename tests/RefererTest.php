@@ -94,7 +94,7 @@ class RefererTest extends TestCase
     }
 
     /** @test */
-    public function if_a_request_has_an_invlaid_referer_it_wont_override_the_previous_one()
+    public function if_a_request_has_an_invalid_referer_it_wont_override_the_previous_one()
     {
         $this->referer->put('google.com');
 
