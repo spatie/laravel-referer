@@ -4,16 +4,40 @@ namespace Spatie\Referer;
 
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Spatie\Referer\Exceptions\InvalidConfiguration;
 use Spatie\Referer\Helpers\Url;
 
 class Referer
 {
+    /** @var string */
+    protected $key;
+
     /** @var \Illuminate\Contracts\Session\Session */
     protected $session;
 
-    public function __construct(Session $session)
+    public function __construct(string $key, Session $session)
     {
+        if (empty($key)) {
+            throw InvalidConfiguration::emptyKey();
+        }
+
+        $this->key = $key;
         $this->session = $session;
+    }
+
+    public function get(): string
+    {
+        return $this->session->get($this->key, '');
+    }
+
+    public function forget()
+    {
+        $this->session->forget($this->key);
+    }
+
+    public function put(string $referer)
+    {
+        return $this->session->put($this->key, $referer);
     }
 
     public function putFromRequest(Request $request)
@@ -21,18 +45,8 @@ class Referer
         $referer = $this->determineFromRequest($request);
 
         if (! empty($referer)) {
-            $this->session->put('referer', $referer);
+            $this->put($referer);
         }
-    }
-
-    public function get(): string
-    {
-        return $this->session->get('referer', '');
-    }
-
-    public function forget()
-    {
-        $this->session->forget('referer');
     }
 
     protected function determineFromRequest(Request $request): string
@@ -41,7 +55,7 @@ class Referer
             return $request->get('utm_source');
         }
 
-        $referer = $request->server('HTTP_REFERER', '');
+        $referer = $request->header('referer', '');
 
         if (empty($referer)) {
             return '';
@@ -57,6 +71,6 @@ class Referer
             return '';
         }
 
-        return $referer;
+        return $refererHost;
     }
 }

@@ -1,4 +1,4 @@
-# Keep a visitor's original referer in session
+# Remember a visitor's original referer
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-referer.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-referer)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -7,7 +7,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-referer.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-referer)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-referer.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-referer)
 
-Keep a visitor's original referer in session. The referer is (highest priority first):
+Remember a visitor's original referer in session. The referer is (highest priority first):
 
 - The `utm_source` query parameter
 - The domain from the server's `HTTP_REFERER` if it's an external URL
@@ -22,13 +22,6 @@ Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
 The best postcards will get published on the open source page on our website.
 
 ## Installation
-
-**Note:** Remove this paragraph if you are building a public package  
-This package is custom built for [Spatie](https://spatie.be) projects and is therefore not registered on packagist. In order to install it via composer you must specify this extra repository in `composer.json`:
-
-```json
-"repositories": [ { "type": "composer", "url": "https://satis.spatie.be/" } ]
-```
 
 You can install the package via composer:
 
