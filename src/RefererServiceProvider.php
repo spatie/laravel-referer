@@ -12,7 +12,7 @@ class RefererServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../resources/config/referer.php' => config_path('referer.php'),
+            __DIR__.'/../resources/config/referer.php' => config_path('referer.php'),
         ], 'config');
     }
 
