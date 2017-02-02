@@ -17,9 +17,9 @@
     ],
     "require": {
         "php": "^7.0",
-        "illuminate/contracts": "^5.4",
-        "illuminate/http": "^5.4",
-        "illuminate/support": "^5.4"
+        "illuminate/contracts": "~5.3.0|~5.4.0",
+        "illuminate/http": "~5.3.0|~5.4.0",
+        "illuminate/support": "~5.3.0|~5.4.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.7",
