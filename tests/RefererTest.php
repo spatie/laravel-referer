@@ -100,6 +100,6 @@ class RefererTest extends TestCase
 
         $this->get('/', ['Referer' => 'https://///google.com']);
 
-        $this->assertEquals('', $this->referer->get());
+        $this->assertEquals('google.com', $this->referer->get());
     }
 }
