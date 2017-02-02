@@ -8,6 +8,6 @@ class InvalidConfiguration extends Exception
 {
     public static function emptyKey(): self
     {
-        return new self('`referer.key` can\'t be empty');
+        return new self("`referer.key` can't be empty");
     }
 }
