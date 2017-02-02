@@ -5,6 +5,7 @@
 [![Build Status](https://img.shields.io/travis/spatie/laravel-referer/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-referer)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/fd60d7c2-ee49-4a82-adfd-00b7f5c55406.svg?style=flat-square)](https://insight.sensiolabs.com/projects/fd60d7c2-ee49-4a82-adfd-00b7f5c55406)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-referer.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-referer)
+[![StyleCI](https://styleci.io/repos/80646641/shield?branch=master)](https://styleci.io/repos/80646641)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-referer.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-referer)
 
 Remember a visitor's original referer in session. The referer is (highest priority first):
