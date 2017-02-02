@@ -20,9 +20,9 @@ class TestCase extends Orchestra
 
         $this->app['config']->set('app.url', 'https://mysite.com');
 
-        $this->app['router']->get('/', ['middleware' => CaptureReferer::class, function () {
+        $this->app['router']->get('/')->middleware(CaptureReferer::class, function () {
             return response(null, 200);
-        }]);
+        });
 
         $this->session = $this->app['session.store'];
         $this->referer = $this->app['referer'];

@@ -40,17 +40,6 @@ You'll need to register the service provider:
 ];
 ```
 
-You can optionally register the facade:
-
-```php
-// config/app.php
-
-'aliases' => [
-    // ...
-   'Referer' => Spatie\Referer\Facades\Referer::class,
-];
-```
-
 You can publish the config file with:
 
 ```
@@ -89,10 +78,17 @@ protected $middlewareGroups = [
 ];
 ```
 
-The easiest way to retrieve the referer is by using the facade:
+The easiest way to retrieve the referer is by just resolving it out of the container:
 
 ```php
-use Referer;
+use App\Spatie\Referer\Referer;
+
+```
+
+Or you could opt to use Laravel's automatic facades:
+
+```php
+use Facades\Spatie\Referer\Referer;
 
 $referer = Referer::get(); // 'google.com'
 ```

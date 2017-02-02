@@ -92,4 +92,14 @@ class RefererTest extends TestCase
 
         $this->assertEquals('google.com', $this->referer->get());
     }
+
+    /** @test */
+    public function if_a_request_has_an_invlaid_referer_it_wont_override_the_previous_one()
+    {
+        $this->referer->put('google.com');
+
+        $this->get('/', ['Referer' => 'https://///google.com']);
+
+        $this->assertEquals('', $this->referer->get());
+    }
 }
