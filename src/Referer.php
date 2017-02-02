@@ -2,10 +2,10 @@
 
 namespace Spatie\Referer;
 
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Spatie\Referer\Exceptions\InvalidConfiguration;
 use Spatie\Referer\Helpers\Url;
+use Illuminate\Contracts\Session\Session;
+use Spatie\Referer\Exceptions\InvalidConfiguration;
 
 class Referer
 {

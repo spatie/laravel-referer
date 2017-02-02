@@ -2,9 +2,9 @@
 
 namespace Spatie\Referer\Test;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\Referer\CaptureReferer;
 use Spatie\Referer\RefererServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
