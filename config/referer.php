@@ -7,4 +7,12 @@ return [
      */
     'key' => 'referer',
 
+    /*
+     * The sources used to determine the referer.
+     */
+    'sources' => [
+        'utm_source' => true,
+        'referer_header' => true,
+    ],
+
 ];

@@ -44,11 +44,31 @@ class RefererTest extends TestCase
     }
 
     /** @test */
+    public function it_cant_capture_the_referer_from_a_request_header_if_the_feature_is_disabled()
+    {
+        config(['referer.sources.referer_header' => false]);
+
+        $this->get('/', ['Referer' => 'https://google.com']);
+
+        $this->assertEquals('', $this->referer->get());
+    }
+
+    /** @test */
     public function it_can_capture_the_referer_from_an_utm_source_query_parameter()
     {
         $this->get('/?utm_source=google.com');
 
         $this->assertEquals('google.com', $this->referer->get());
+    }
+
+    /** @test */
+    public function it_cant_capture_the_referer_from_an_utm_source_query_parameter_if_the_feature_is_disabled()
+    {
+        config(['referer.sources.utm_source' => false]);
+
+        $this->get('/?utm_source=google.com');
+
+        $this->assertEquals('', $this->referer->get());
     }
 
     /** @test */
