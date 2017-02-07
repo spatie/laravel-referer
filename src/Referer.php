@@ -51,8 +51,12 @@ class Referer
 
     protected function determineFromRequest(Request $request): string
     {
-        if ($request->has('utm_source')) {
+        if (config('referer.sources.utm_source', true) && $request->has('utm_source')) {
             return $request->get('utm_source');
+        }
+
+        if (!config('referer.sources.referer_header', true)) {
+            return '';
         }
 
         $referer = $request->header('referer', '');

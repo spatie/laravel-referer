@@ -47,15 +47,24 @@ You can publish the config file with:
 php artisan vendor:publish --provider="Spatie\Referer\RefererServiceProvider"
 ```
 
-Publishing the config file is only necessary if you'd want to change the key in which the referer is stored in the session.
+Publishing the config file is necessary if you want to change the key in which the referer is stored in the session or
+if you want to disable a referer source.
 
-```
+```php
 return [
 
     /*
      * The key that will be used to remember the referer in the session.
      */
     'key' => 'referer',
+
+    /*
+     * The sources used to determine the referer.
+     */
+    'sources' => [
+        'utm_source' => true,
+        'referer_header' => true,
+    ],
 
 ];
 ```
