@@ -55,7 +55,7 @@ class Referer
             return $request->get('utm_source');
         }
 
-        if (!config('referer.sources.referer_header', true)) {
+        if (! config('referer.sources.referer_header', true)) {
             return '';
         }
 
