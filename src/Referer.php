@@ -51,11 +51,11 @@ class Referer
 
     protected function determineFromRequest(Request $request): string
     {
-        if (config('referer.sources.utm_source', true) && $request->has('utm_source')) {
+        if ($this->shouldCapture('utm_source') && $request->has('utm_source')) {
             return $request->get('utm_source');
         }
 
-        if (!config('referer.sources.referer_header', true)) {
+        if (! $this->shouldCapture('referer_header')) {
             return '';
         }
 
@@ -76,5 +76,10 @@ class Referer
         }
 
         return $refererHost;
+    }
+
+    protected function shouldCapture(string $source): bool
+    {
+        return config("referer.sources.{$source}", false);
     }
 }

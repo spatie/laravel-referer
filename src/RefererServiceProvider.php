@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 class RefererServiceProvider extends ServiceProvider
 {
+    protected $defer = true;
+
     /**
      * Bootstrap the application services.
      */
@@ -24,8 +26,8 @@ class RefererServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/referer.php', 'referer');
 
         $this->app->when(Referer::class)
-                  ->needs('$key')
-                  ->give(config('referer.key'));
+            ->needs('$key')
+            ->give(config('referer.key'));
 
         $this->app->singleton(Referer::class);
         $this->app->alias(Referer::class, 'referer');

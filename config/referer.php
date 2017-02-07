@@ -14,5 +14,4 @@ return [
         'utm_source' => true,
         'referer_header' => true,
     ],
-
 ];
