@@ -2,8 +2,6 @@
 
 namespace Spatie\Referer\Test;
 
-use Spatie\Referer\Referer;
-
 class RefererTest extends TestCase
 {
     /** @test */
