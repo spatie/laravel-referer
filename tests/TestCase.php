@@ -2,8 +2,8 @@
 
 namespace Spatie\Referer\Test;
 
-use Spatie\Referer\CaptureReferer;
 use Spatie\Referer\Referer;
+use Spatie\Referer\CaptureReferer;
 use Spatie\Referer\RefererServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
