@@ -34,7 +34,9 @@ class RefererTest extends TestCase
     {
         $this->referer->put('google.com');
 
-        $this->assertEquals('google.com', $this->session->get(config('referer.key')));
+        $sessionKey = $this->app['config']->get('referer.session_key');
+        
+        $this->assertEquals('google.com', $this->session->get($sessionKey));
     }
 
     /** @test */

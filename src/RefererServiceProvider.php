@@ -24,15 +24,15 @@ class RefererServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/referer.php', 'referer');
 
         $this->app->when(Referer::class)
-            ->needs('$key')
+            ->needs('$sessionKey')
             ->give(function () {
-                return config('referer.key');
+                return $this->app['config']->get('referer.session_key');
             });
 
         $this->app->when(Referer::class)
             ->needs('$sources')
             ->give(function () {
-                return config('referer.sources', []);
+                return $this->app['config']->get('referer.sources', []);
             });
 
         $this->app->singleton(Referer::class);
