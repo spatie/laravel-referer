@@ -2,8 +2,8 @@
 
 namespace Spatie\Referer\Sources;
 
-use Illuminate\Http\Request;
 use Spatie\Referer\Source;
+use Illuminate\Http\Request;
 
 class UtmSource implements Source
 {
