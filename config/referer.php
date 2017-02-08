@@ -5,7 +5,7 @@ return [
     /*
      * The key that will be used to remember the referer in the session.
      */
-    'key' => 'referer',
+    'session_key' => 'referer',
 
     /*
      * The sources used to determine the referer.

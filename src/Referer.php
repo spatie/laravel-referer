@@ -9,7 +9,7 @@ use Spatie\Referer\Exceptions\InvalidConfiguration;
 class Referer
 {
     /** @var string */
-    protected $key;
+    protected $sessionKey;
 
     /** @var array */
     protected $sources;
@@ -17,30 +17,30 @@ class Referer
     /** @var \Illuminate\Contracts\Session\Session */
     protected $session;
 
-    public function __construct(string $key, array $sources, Session $session)
+    public function __construct(string $sessionKey, array $sources, Session $session)
     {
-        if (empty($key)) {
-            throw InvalidConfiguration::emptyKey();
+        if (empty($sessionKey)) {
+            throw InvalidConfiguration::emptySessionKey();
         }
 
-        $this->key = $key;
+        $this->sessionKey = $sessionKey;
         $this->sources = $sources;
         $this->session = $session;
     }
 
     public function get(): string
     {
-        return $this->session->get($this->key, '');
+        return $this->session->get($this->sessionKey, '');
     }
 
     public function forget()
     {
-        $this->session->forget($this->key);
+        $this->session->forget($this->sessionKey);
     }
 
     public function put(string $referer)
     {
-        return $this->session->put($this->key, $referer);
+        return $this->session->put($this->sessionKey, $referer);
     }
 
     public function putFromRequest(Request $request)

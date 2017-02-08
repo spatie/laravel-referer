@@ -6,8 +6,8 @@ use Exception;
 
 class InvalidConfiguration extends Exception
 {
-    public static function emptyKey(): self
+    public static function emptySessionKey(): self
     {
-        return new self("`referer.key` can't be empty");
+        return new self("`referer.session_key` can't be empty");
     }
 }

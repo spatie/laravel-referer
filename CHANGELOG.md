@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.2.0 - 2017-02-08
+- **Breaking**: Sources are now configured via `Source` implementations
+- **Breaking**: The configuration key `referer.key` has been renamed to `referer.session_key`
+
 ## 1.1.1 - 2017-02-07
 - Fixed: Fixed a regression that was introduced in 1.1.0
 
