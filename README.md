@@ -56,16 +56,15 @@ return [
     /*
      * The key that will be used to remember the referer in the session.
      */
-    'key' => 'referer',
+    'session_key' => 'referer',
 
     /*
      * The sources used to determine the referer.
      */
     'sources' => [
-        'utm_source' => true,
-        'referer_header' => true,
+        Spatie\Referer\Sources\UtmSource::class,
+        Spatie\Referer\Sources\RequestHeader::class,
     ],
-
 ];
 ```
 
@@ -124,6 +123,55 @@ Referer::get(); // 'google.com'
 Referer::forget();
 Referer::get(); // ''
 ```
+
+### Changing the way the referer is determined
+
+The referer is determined by doing checks on various sources, which are defined in the configuration.
+
+```php
+return [
+    // ...
+    'sources' => [
+        Spatie\Referer\Sources\UtmSource::class,
+        Spatie\Referer\Sources\RequestHeader::class,
+    ],
+];
+```
+
+A source implements the `Source` interface, and requires one method, `getReferer`. If a source is able to determine a referer, other sources will be ignored. In other words, the `sources` array is ordered by priority.
+
+In the next example, we'll add a source that can use a `?ref` query parameter to determine the referer. Additionally, we'll ignore `?utm_source` parameters.
+
+First, create the source implementations:
+
+```php
+namespace App\Referer;
+
+use Illuminate\Http\Request;
+use Spatie\Referer\Source;
+
+class RefParameter implements Source
+{
+    public function getReferer(Request $request): string
+    {
+        return $request->get('ref', ''); 
+    }
+}
+```
+
+Then register your source in the `sources` array. We'll also disable the `utm_source` while we're at it.
+
+```php
+return [
+    // ...
+    'sources' => [
+        App\Referer\RefParameter::class,
+        Spatie\Referer\Sources\RequestHeader::class,
+    ],
+];
+```
+
+That's it! Source implementations can be this simple, or more advanced if necessary.
 
 ## Changelog
 

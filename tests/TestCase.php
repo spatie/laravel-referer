@@ -2,6 +2,7 @@
 
 namespace Spatie\Referer\Test;
 
+use Spatie\Referer\Referer;
 use Spatie\Referer\CaptureReferer;
 use Spatie\Referer\RefererServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -33,5 +34,14 @@ class TestCase extends Orchestra
         return [
             RefererServiceProvider::class,
         ];
+    }
+
+    protected function withConfig(array $config)
+    {
+        $this->app['config']->set($config);
+
+        $this->app->forgetInstance(Referer::class);
+
+        $this->referer = $this->app->make(Referer::class);
     }
 }

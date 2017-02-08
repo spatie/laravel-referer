@@ -2,6 +2,8 @@
 
 namespace Spatie\Referer\Test;
 
+use Spatie\Referer\Referer;
+
 class RefererTest extends TestCase
 {
     /** @test */
@@ -32,7 +34,9 @@ class RefererTest extends TestCase
     {
         $this->referer->put('google.com');
 
-        $this->assertEquals('google.com', $this->session->get(config('referer.key')));
+        $sessionKey = $this->app['config']->get('referer.session_key');
+
+        $this->assertEquals('google.com', $this->session->get($sessionKey));
     }
 
     /** @test */
@@ -46,7 +50,7 @@ class RefererTest extends TestCase
     /** @test */
     public function it_cant_capture_the_referer_from_a_request_header_if_the_feature_is_disabled()
     {
-        config(['referer.sources.referer_header' => false]);
+        $this->withConfig(['referer.sources' => []]);
 
         $this->get('/', ['Referer' => 'https://google.com']);
 
@@ -64,7 +68,7 @@ class RefererTest extends TestCase
     /** @test */
     public function it_cant_capture_the_referer_from_an_utm_source_query_parameter_if_the_feature_is_disabled()
     {
-        config(['referer.sources.utm_source' => false]);
+        $this->withConfig(['referer.sources' => []]);
 
         $this->get('/?utm_source=google.com');
 
