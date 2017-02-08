@@ -11,7 +11,7 @@ return [
      * The sources used to determine the referer.
      */
     'sources' => [
-        'utm_source' => true,
-        'referer_header' => true,
+        Spatie\Referer\Sources\UtmSource::class,
+        Spatie\Referer\Sources\RequestHeader::class,
     ],
 ];

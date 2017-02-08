@@ -3,7 +3,6 @@
 namespace Spatie\Referer;
 
 use Illuminate\Http\Request;
-use Spatie\Referer\Helpers\Url;
 use Illuminate\Contracts\Session\Session;
 use Spatie\Referer\Exceptions\InvalidConfiguration;
 
@@ -12,16 +11,20 @@ class Referer
     /** @var string */
     protected $key;
 
+    /** @var array */
+    protected $sources;
+
     /** @var \Illuminate\Contracts\Session\Session */
     protected $session;
 
-    public function __construct(string $key, Session $session)
+    public function __construct(string $key, array $sources, Session $session)
     {
         if (empty($key)) {
             throw InvalidConfiguration::emptyKey();
         }
 
         $this->key = $key;
+        $this->sources = $sources;
         $this->session = $session;
     }
 
@@ -51,35 +54,12 @@ class Referer
 
     protected function determineFromRequest(Request $request): string
     {
-        if ($this->shouldCapture('utm_source') && $request->has('utm_source')) {
-            return $request->get('utm_source');
+        foreach ($this->sources as $source) {
+            if ($referer = app($source)->getReferer($request)) {
+                return $referer;
+            }
         }
 
-        if (! $this->shouldCapture('referer_header')) {
-            return '';
-        }
-
-        $referer = $request->header('referer', '');
-
-        if (empty($referer)) {
-            return '';
-        }
-
-        $refererHost = Url::host($referer);
-
-        if (empty($refererHost)) {
-            return '';
-        }
-
-        if ($refererHost === $request->getHost()) {
-            return '';
-        }
-
-        return $refererHost;
-    }
-
-    protected function shouldCapture(string $source): bool
-    {
-        return config("referer.sources.{$source}", false);
+        return '';
     }
 }
