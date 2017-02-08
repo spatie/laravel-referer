@@ -55,7 +55,7 @@ class Referer
     protected function determineFromRequest(Request $request): string
     {
         foreach ($this->sources as $source) {
-            if ($referer = app($source)->getReferer($request)) {
+            if ($referer = (new $source)->getReferer($request)) {
                 return $referer;
             }
         }
