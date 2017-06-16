@@ -40,5 +40,12 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Referer\\RefererServiceProvider"
+            ]
+        }
     }
 }
