@@ -30,16 +30,7 @@ You can install the package via composer:
 composer require spatie/laravel-referer
 ```
 
-You'll need to register the service provider:
-
-```php
-// config/app.php
-
-'providers' => [
-    // ...
-    Spatie\Referer\RefererServiceProvider::class,
-];
-```
+The package will automatically register itself.
 
 You can publish the config file with:
 
