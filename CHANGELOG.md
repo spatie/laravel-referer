@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## Unreleased
+
+- make compatible with Laravel 5.5
+
 ## 1.2.1 - 2017-02-12
 - Fixed: publishing of config file
 

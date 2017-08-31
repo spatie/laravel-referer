@@ -17,13 +17,13 @@
     ],
     "require": {
         "php": "^7.0",
-        "illuminate/contracts": "~5.4.0",
-        "illuminate/http": "~5.4.0",
-        "illuminate/support": "~5.4.0"
+        "illuminate/contracts": "~5.4.0|~5.5.0",
+        "illuminate/http": "~5.4.0|~5.5.0",
+        "illuminate/support": "~5.4.0|~5.5.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.4.3",
-        "phpunit/phpunit": "^5.7"
+        "orchestra/testbench": "~3.4.3|~3.5.0",
+        "phpunit/phpunit": "^5.7|^6.2"
     },
     "autoload": {
         "psr-4": {
