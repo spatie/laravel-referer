@@ -1,5 +1,5 @@
 {
-    "name": "spatie/laravel-referer",
+    "name": "sibapp/laravel-referer",
     "description": "Keep a visitor's original referer in session",
     "keywords": [
         "spatie",
