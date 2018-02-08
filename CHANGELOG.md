@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.3.1 - 2018-02-08
+
+- make compatible with Laravel 5.6
+- make compatible with phpunit 7
+
 ## 1.3.0 - 2017-08-31
 
 - make compatible with Laravel 5.5
