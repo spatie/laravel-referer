@@ -2,14 +2,15 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
-## 1.3.1 - 2018-02-08
+## 1.3.2 - 2018-05-14
+- Ensure `UrmSource` always returns a referer string
 
-- make compatible with Laravel 5.6
-- make compatible with phpunit 7
+## 1.3.1 - 2018-02-08
+- Make compatible with Laravel 5.6
+- Make compatible with phpunit 7
 
 ## 1.3.0 - 2017-08-31
-
-- make compatible with Laravel 5.5
+- Make compatible with Laravel 5.5
 
 ## 1.2.1 - 2017-02-12
 - Fixed: publishing of config file
