@@ -3,7 +3,7 @@
 All notable changes to `laravel-referer` will be documented in this file
 
 ## 1.3.2 - 2018-05-14
-- Ensure `UrmSource` always returns a referer string
+- Ensure `UtmSource` always returns a referer string
 
 ## 1.3.1 - 2018-02-08
 - Make compatible with Laravel 5.6
