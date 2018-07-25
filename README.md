@@ -101,7 +101,7 @@ The `Referer` class provides dedicated methods to forget, or manually set the re
 ```php
 use Referer;
 
-Referer::set('google.com');
+Referer::put('google.com');
 Referer::get(); // 'google.com'
 Referer::forget();
 Referer::get(); // ''
