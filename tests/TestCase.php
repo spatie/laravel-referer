@@ -15,7 +15,7 @@ class TestCase extends Orchestra
     /** @var \Spatie\Referer\Referer */
     protected $referer;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.3.4 - 2019-02-27
+
+- add support for Laravel 5.8
+
 ## 1.3.3 - 2018-08-29
 
 - add support for Laravel 5.7
