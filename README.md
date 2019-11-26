@@ -72,7 +72,7 @@ protected $middlewareGroups = [
 The easiest way to retrieve the referer is by just resolving it out of the container:
 
 ```php
-use App\Spatie\Referer\Referer;
+use Spatie\Referer\Referer;
 
 $referer = app(Referer::class)->get(); // 'google.com'
 ```
