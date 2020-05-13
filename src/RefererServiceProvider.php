@@ -3,6 +3,7 @@
 namespace Spatie\Referer;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Http\Kernel;
 
 class RefererServiceProvider extends ServiceProvider
 {
@@ -37,5 +38,7 @@ class RefererServiceProvider extends ServiceProvider
 
         $this->app->singleton(Referer::class);
         $this->app->alias(Referer::class, 'referer');
+
+        $this->app[Kernel::class]->appendMiddlewareToGroup('web', CaptureReferer::class);
     }
 }

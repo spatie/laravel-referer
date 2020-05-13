@@ -58,23 +58,6 @@ return [
 
 ## Usage
 
-To capture the referer, all you need to do is add the `Spatie\Referer\CaptureReferer` middleware to your middleware stack. In most configuration's, you'll only want to capture the referer in "web" requests, so it makes sense to register it in the `web` stack. Make sure it comes **after** Laravel's `StartSession` middleware!
-
-```php
-// app/Http/Kernel.php
-
-protected $middlewareGroups = [
-    'web' => [
-        // ...
-        \Illuminate\Session\Middleware\StartSession::class,
-        // ...
-        \Spatie\Referer\CaptureReferer::class,
-        // ...
-    ],
-    // ...
-];
-```
-
 The easiest way to retrieve the referer is by just resolving it out of the container:
 
 ```php
