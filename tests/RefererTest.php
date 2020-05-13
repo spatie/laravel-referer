@@ -92,7 +92,7 @@ class RefererTest extends TestCase
     /** @test */
     public function the_referer_is_empty_when_the_current_domain_is_in_the_referer_header()
     {
-        $this->get('/', ['Referer' => 'https://mysite.com']);
+        $this->get('https://mysite.com', ['Referer' => 'https://mysite.com']);
 
         $this->assertEquals('', $this->referer->get());
     }
