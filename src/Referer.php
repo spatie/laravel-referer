@@ -17,7 +17,7 @@ class Referer
     /** @var \Illuminate\Contracts\Session\Session */
     protected $session;
 
-    public function __construct(string $sessionKey, array $sources, Session $session)
+    public function __construct(?string $sessionKey, array $sources, Session $session)
     {
         if (empty($sessionKey)) {
             throw InvalidConfiguration::emptySessionKey();
