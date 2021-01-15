@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.7.1 - 2021-01-15
+
+- add support for PHP 8
+
 ## 1.7.0 - 2020-09-08
 
 - add support for Laravel 8
