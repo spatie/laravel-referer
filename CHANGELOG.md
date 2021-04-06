@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.7.2 - 2021-04-06
+
+-  prep for Octane (#37)
+
 ## 1.7.1 - 2021-01-15
 
 - add support for PHP 8
