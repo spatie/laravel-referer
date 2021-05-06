@@ -25,11 +25,15 @@ class RefererServiceProvider extends ServiceProvider
 
         $this->app->when(Referer::class)
             ->needs('$sessionKey')
-            ->giveConfig('referer.session_key');
+            ->give(function () {
+                return $this->app['config']->get('referer.session_key');
+            });
 
         $this->app->when(Referer::class)
             ->needs('$sources')
-            ->giveConfig('referer.sources');
+            ->give(function () {
+                return $this->app['config']->get('referer.sources', []);
+            });
 
         $this->app->singleton(Referer::class);
         $this->app->alias(Referer::class, 'referer');
