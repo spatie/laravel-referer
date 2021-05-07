@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.7.3 - 2021-05-07
+
+- fix laravel-referer 1.7.2 on Laravel 7.30.4 (#39)
+
 ## 1.7.2 - 2021-04-06
 
 -  prep for Octane (#37)
