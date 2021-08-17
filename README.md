@@ -105,7 +105,7 @@ An empty referer will never overwrite an exisiting referer. So if a visitor come
 The `Referer` class provides dedicated methods to forget, or manually set the referer.
 
 ```php
-use Referer;
+use Facades\Spatie\Referer\Referer;
 
 Referer::put('google.com');
 Referer::get(); // 'google.com'
