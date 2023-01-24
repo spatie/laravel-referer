@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.8.1 - 2023-01-24
+
+### What's Changed
+
+- Add PHP 8.2 Support by @patinthehat in https://github.com/spatie/laravel-referer/pull/46
+- Laravel 10.x Compatibility by @laravel-shift in https://github.com/spatie/laravel-referer/pull/47
+
+**Full Changelog**: https://github.com/spatie/laravel-referer/compare/1.8.0...1.8.1
+
 ## 1.8.0 - 2022-01-13
 
 ## What's Changed
