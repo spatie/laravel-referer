@@ -2,8 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-referer.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-referer)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-![Test Status](https://img.shields.io/github/workflow/status/spatie/laravel-referer/run-tests?label=tests)
-![Code Style Status](https://img.shields.io/github/workflow/status/spatie/laravel-referer/Check%20&%20fix%20styling?label=code%20style)
+[![run-tests](https://github.com/spatie/laravel-referer/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/laravel-referer/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-referer.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-referer)
 
 Remember a visitor's original referer in session. The referer is (highest priority first):
