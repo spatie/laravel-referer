@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.9.1 - 2025-02-20
+
+### What's Changed
+
+* Laravel 12.x Compatibility by @laravel-shift in https://github.com/spatie/laravel-referer/pull/52
+
+**Full Changelog**: https://github.com/spatie/laravel-referer/compare/1.9.0...1.9.1
+
 ## 1.9.0 - 2024-04-08
 
 ### What's Changed
