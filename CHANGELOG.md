@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.9.2 - 2026-01-28
+
+### What's Changed
+
+* Update issue template by @AlexVanderbist in https://github.com/spatie/laravel-referer/pull/53
+* Fix Request::get() deprecation in Symfony 7.4 by @freekbot in https://github.com/spatie/laravel-referer/pull/55
+
+### New Contributors
+
+* @AlexVanderbist made their first contribution in https://github.com/spatie/laravel-referer/pull/53
+* @freekbot made their first contribution in https://github.com/spatie/laravel-referer/pull/55
+
+**Full Changelog**: https://github.com/spatie/laravel-referer/compare/1.9.1...1.9.2
+
 ## 1.9.1 - 2025-02-20
 
 ### What's Changed
