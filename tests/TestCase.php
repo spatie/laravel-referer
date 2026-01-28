@@ -9,7 +9,7 @@ use Spatie\Referer\RefererServiceProvider;
 
 class TestCase extends Orchestra
 {
-    protected static $latestResponse;
+    public static $latestResponse;
 
     /** @var \Illuminate\Contracts\Session\Session */
     protected $session;
