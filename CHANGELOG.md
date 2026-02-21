@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-referer` will be documented in this file
 
+## 1.9.3 - 2026-02-21
+
+Support Laravel 13
+
 ## 1.9.2 - 2026-01-28
 
 ### What's Changed
