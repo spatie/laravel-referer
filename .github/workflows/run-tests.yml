@@ -20,6 +20,10 @@ jobs:
         exclude:
           - laravel: 13.*
             php: 8.2
+          # Laravel 12's ArraySessionHandler lacks create_sid() on PHP 8.6:
+          # https://github.com/spatie/laravel-referer/actions/runs/42016414127/job/127207943761
+          - laravel: 12.*
+            php: 8.6
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }}
 
